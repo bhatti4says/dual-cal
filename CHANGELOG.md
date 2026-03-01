@@ -1,9 +1,6 @@
 
-# Changelog — Dual Calendar v2
+# Changelog — Dual Calendar v2.1
 
-## v2 (2026‑03‑01)
-- **Umm‑al‑Qura alignment by default**:
-  - `Refine with API` is **ON** by default on first run and persists.
-  - If API is unreachable, a **local fallback** anchors to **1 Ramadan 1447 = 18 Feb 2026** to keep Ramadan dates consistent with Umm‑al‑Qura.
-- **Weekend highlight**: Friday & Saturday columns styled and marked in both calendars.
-- **Performance**: Still offline‑first, minimal intervals, no alerts, event delegation.
+## v2.1 (2026‑03‑01)
+- **Display Hijri month numbers** in all textual dates, e.g., `Ramadan (9)`.
+- Keeps v2 features: Umm‑al‑Qura alignment (API refine + local anchor) and Fri/Sat weekend.

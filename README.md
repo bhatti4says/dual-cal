@@ -1,19 +1,12 @@
 
-# Dual Calendar (v2) — Gregorian + Hijri (Umm‑al‑Qura aligned)
+# Dual Calendar (v2.1) — Gregorian + Hijri (Umm‑al‑Qura aligned)
 
-**What’s new**
-- Default alignment to **Umm‑al‑Qura**: one‑shot call to Aladhan `gToH` (Umm‑al‑Qura based). If offline, a local anchor (1 Ramadan 1447 = 18 Feb 2026) is used so Ramadan days match KSA.
-- **Weekend** highlight: Friday & Saturday.
+**Changes in v2.1**
+- Adds Hijri **month numbers** to displayed dates (e.g., `Ramadan (9)`).
+- Still offline‑first; aligns to Umm‑al‑Qura by default (one‑shot Aladhan refine; local fallback anchor 1 Ramadan 1447 = 18 Feb 2026).
 
-## Deploy / Update
-
+**Deploy**
 ```bash
 sudo cp index.html styles.css app.js /var/www/html/dual-cal/
-# or unzip the zip into the same folder
 sudo nginx -t && sudo systemctl reload nginx
-```
-
-## Notes
-- The tabular algorithm is used offline, but a small **±2 day** offset aligns to Umm‑al‑Qura when available.
-- Verify example: **Sun, Mar 1, 2026 (Gregorian) → 12 Ramadan 1447 AH** under Umm‑al‑Qura.
 ```
