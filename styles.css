@@ -2,6 +2,7 @@
 :root{
   --bg:#0f1320; --panel:#161b2e; --text:#e8ecff; --muted:#8a90b2;
   --accent:#4cc9f0; --accent2:#e76f51; --today:#2a9d8f; --grid:#1f2542;
+  --weekend:#1b2144;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -23,6 +24,7 @@ body{margin:0;background:radial-gradient(1200px 600px at 50% -10%, #1a2040, var(
 .nav:hover{background:#0f1425}
 .weekday-row{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:6px 2px 8px}
 .weekday-row span{color:var(--muted);text-align:center;font-size:12px}
+.weekday-row span.weekend{color:#f0b27a}
 .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .cell{background:var(--grid);border:1px solid #242a4b;min-height:60px;border-radius:10px;padding:6px;display:flex;align-items:flex-start;justify-content:flex-end;position:relative;cursor:pointer}
 .cell:hover{outline:1px solid var(--accent);}
@@ -31,6 +33,7 @@ body{margin:0;background:radial-gradient(1200px 600px at 50% -10%, #1a2040, var(
 .cell.empty{background:transparent;border:0;cursor:default}
 .cell.today{box-shadow:inset 0 0 0 2px var(--today)}
 .cell.selected{box-shadow:inset 0 0 0 2px var(--accent2)}
+.cell.weekend{background:var(--weekend)}
 
 .details{background:linear-gradient(180deg,#171d33,#13182a);border:1px solid #23284b;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.35);padding:12px}
 .details h3{margin-top:6px}
