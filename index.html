@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dual Calendar — Gregorian & Hijri (Offline-first)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Dual Calendar <small>Gregorian ↔ Hijri</small></h1>
+    <div class="status">
+      <span id="clock"></span>
+      <label class="toggle">
+        <input type="checkbox" id="useApiToggle" />
+        <span>Refine with API (optional)</span>
+      </label>
+      <span id="apiStatus" class="muted">offline mode</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="calendar-panel" aria-label="Gregorian calendar">
+      <div class="cal-header">
+        <button class="nav" id="gPrev" aria-label="Previous month">◀</button>
+        <h2 id="gTitle">Gregorian</h2>
+        <button class="nav" id="gNext" aria-label="Next month">▶</button>
+      </div>
+      <div class="weekday-row" aria-hidden="true">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div id="gGrid" class="grid"></div>
+    </section>
+
+    <section class="calendar-panel" aria-label="Hijri calendar">
+      <div class="cal-header">
+        <button class="nav" id="hPrev" aria-label="Previous Hijri month">◀</button>
+        <h2 id="hTitle">Hijri</h2>
+        <button class="nav" id="hNext" aria-label="Next Hijri month">▶</button>
+      </div>
+      <div class="weekday-row" aria-hidden="true">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div id="hGrid" class="grid"></div>
+    </section>
+
+    <aside class="details" aria-live="polite">
+      <h3>Selection</h3>
+      <div id="selection">Click a date…</div>
+      <hr>
+      <h3>Today</h3>
+      <div id="todayBlock"></div>
+      <small class="muted" id="disclaimer">Hijri dates use tabular calculation offline; you may enable API to refine to Umm al‑Qura.</small>
+    </aside>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
